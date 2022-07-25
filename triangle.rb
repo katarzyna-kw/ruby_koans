@@ -18,8 +18,10 @@ def triangle(a, b, c)
     :equilateral
   elsif a == b || a == c || b == c
     :isosceles    
-  else
+  elsif a != b && b != c && a != c
     :scalene
+  else
+    raise TriangleError.new("hello")
   end
 end
 

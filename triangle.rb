@@ -14,6 +14,19 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+
+  sum = a + b
+  sum2 = a + c
+  sum3 = b + c
+
+  if sum <= c || sum2 <= b || sum3 <= a
+    raise TriangleError
+  end
+  
+  if a <= 0 || b <= 0 || c <= 0
+    raise TriangleError
+  end
+
   if a == b && b == c
     :equilateral
   elsif a == b || a == c || b == c

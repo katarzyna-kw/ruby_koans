@@ -115,22 +115,23 @@ class AboutClasses < Neo::Koan
 
   def test_initialize_provides_initial_values_for_instance_variables
     fido = Dog6.new("Fido")
-    assert_equal __, fido.name
+    assert_equal "Fido", fido.name
   end
 
   def test_args_to_new_must_match_initialize
-    assert_raise(___) do
+    assert_raise(ArgumentError) do
       Dog6.new
     end
     # THINK ABOUT IT:
     # Why is this so?
+    # The way the Dog6 class is set up, you cannot run the initialize method which runs when you create a new object without including a param for initial_name.
   end
 
   def test_different_objects_have_different_instance_variables
     fido = Dog6.new("Fido")
     rover = Dog6.new("Rover")
 
-    assert_equal __, rover.name != fido.name
+    assert_equal true, rover.name != fido.name
   end
 
   # ------------------------------------------------------------------
